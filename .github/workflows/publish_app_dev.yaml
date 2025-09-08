@@ -18,14 +18,7 @@ jobs:
       # 签出代码
       - uses: actions/checkout@v4
         with:
-          ref: dev
-          
-      # 设置JAVA环境
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: "17"
-          cache: "gradle"
+          ref: master
 
       # 设置Flutter
       - name: Flutter action
