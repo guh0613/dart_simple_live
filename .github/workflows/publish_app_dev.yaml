@@ -55,7 +55,7 @@ jobs:
       - name: Create IPA
         run: |
           cd simple_live_app
-          mkdir build/ios/ipa
+          cd build/ios/ipa
           ls
 
       # 上传IPA至Artifacts
@@ -64,7 +64,7 @@ jobs:
         with:
           name: ios
           path: |
-            simple_live_app/build/ios/ipa/Runner.ipa
+            simple_live_app/build/ios/ipa/*.ipa
             
       #完成
       - run: echo "🍏 This job's status is ${{ job.status }}."
