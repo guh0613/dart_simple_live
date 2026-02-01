@@ -95,6 +95,7 @@ jobs:
           mkdir build/ios/iphoneos/Payload
           cp -R build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/Runner.app
           cd build/ios/iphoneos/
+          find Payload/Runner.app/Frameworks -type d -name "*.framework" -exec codesign --force --sign - --preserve-metadata=identifier,entitlements {} \;
           zip -q -r ios_no_sign.ipa Payload
           cd ../../..
 
